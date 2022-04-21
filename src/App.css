@@ -1,0 +1,15 @@
+.navbar-brand{
+  padding-left: 15px;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9ffa1;
+background-image: linear-gradient(62deg, #fbec7e 50%, #F7CE68 100%);
+
+}
+
+.mainpage{
+  padding-top: 5%;
+}
+

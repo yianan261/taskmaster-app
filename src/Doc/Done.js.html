@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    /**
+    * Done function renders "Completed Tasks" chart
+    * @param {props} 
+    * @returns render the list of completed tasks
+    */
+   function Done({ checkDoneTasks, handleSaveList }) {
+     const [wordsEncourage, setWordsEncourage] = useState("");
+     /**
+      * generates words of encouragement, renders when checkDoneTasks(array of finished tasks) change
+      */
+     useEffect(() => {
+       const words = [
+         "You're doing great!",
+         "Keep Going!",
+         "You are on fire!",
+         "You're on a roll!",
+         "Awesome job!",
+         "Great job!",
+       ];
+       setWordsEncourage(words[Math.floor(Math.random() * words.length)]);
+     }, [checkDoneTasks]);
+   
+     return (
+       <div className="Done">
+         <div className="save">
+           <RiSaveLine size={30} className="save-icon" onClick={handleSaveList} />
+         </div>
+         <div className="done-space">
+           <h1>Completed Tasks</h1>
+           <p id="done-words">
+             {" "}
+             {checkDoneTasks.length > 0 ? `${wordsEncourage}` : ""}
+           </p>
+           {checkDoneTasks.map((task) => (
+             <div key={task.id} className="done-row">
+               {task.text}
+               <ImCheckmark
+                 className="done-icon"
+                 style={{ color: "white" }}
+                 size={28}
+               />
+             </div>
+           ))}
+         </div>
+       </div>
+     );
+   }
+   Done.propTypes = {
+     checkDoneTasks: PropTypes.array.isRequired,
+     handleSaveList: PropTypes.func.isRequired,
+   };
+   export default Done;
+    
+</body>
+</html>

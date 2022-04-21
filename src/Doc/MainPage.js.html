@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+/**
+ * MainPage function nests the Tasklist chart, Done chart, and Progress chart
+ * @param {prop} param
+ * @returns 
+ */
+const MainPage = ({ tdm }) => {
+  const [tasks, setTasks] = useState([]);
+  const [checkDoneTasks, setCheckDoneTasks] = useState([]);
+  const [percent, setPercent] = useState(0);
+
+  /**
+   * calculates percentage for progress component
+   */
+  useEffect(() => {
+    const percentage = (checkDoneTasks.length / tasks.length) * 100;
+    setPercent(percentage.toFixed(2));
+  }, [tasks, checkDoneTasks]);
+
+  /**
+   * handleSaveList function adds completed tasks to the database and resets checkDoneTasks array
+   * When users save completed tasks, the completed component needs to reset
+   * tasks array also need to remove the ones that are completed and archived
+   */
+  const handleSaveList = () => {
+    const newTaskList = tasks.filter((task) => task.isComplete !== true);
+    setTasks(newTaskList);
+    checkDoneTasks.forEach((task) => tdm.saveDoneList(task));
+    setCheckDoneTasks([]);
+    alert("Tasks Saved!");
+  };
+
+  return (
+    <div className="main-page">
+      <div className="col-sm">
+        <TaskList
+          tasks={tasks}
+          setTasks={setTasks}
+          setCheckDoneTasks={setCheckDoneTasks}
+        />
+      </div>
+      <div className="col-sm">
+        <Done checkDoneTasks={checkDoneTasks} handleSaveList={handleSaveList} />
+      </div>
+      <div className="col-sm" id="progress-c">
+        <ProgressCheck percent={percent} checkDoneTasks={checkDoneTasks} />
+      </div>
+    </div>
+  );
+};
+MainPage.propTypes = {
+  tdm: PropTypes.object.isRequired,
+};
+export default MainPage;
+
+
+
+</body>
+</html>
