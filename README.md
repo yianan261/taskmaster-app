@@ -36,9 +36,17 @@ Project deployed on surge [here](https://oldfashioned-taskmaster.surge.sh/)
 
 Js Dos included in "doc" folder 
 
-# Tests with Jest and Cypress
+# Tests with Cypress
 
-Unit tests with Jest and E2E with Cypress
-Unit tests in __test__ folder
-Cypress tests in Cypress folder
+#### Five E2E test cases with Cypress in Cypress folder
+
+TaskList.spec.js:
+Allows tasks to be added
+Allows tasks to be added, saved to complete chart when checked
+Allows tasks to be edited and updated
+
+Tracker.spec.js:
+Allows search by keyword and query
+Allows search by date and gets results
+
 
