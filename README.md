@@ -34,7 +34,7 @@ Project deployed on surge [here](https://oldfashioned-taskmaster.surge.sh/)
 
 # Js Docs
 
-Js Dos included in "doc" folder 
+Js Dos included in "Doc" folder 
 
 # Tests with Cypress
 
