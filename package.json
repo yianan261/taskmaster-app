@@ -20,9 +20,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "cypress open",
     "eject": "react-scripts eject"
   },
+  "lint": "eslint --max-warnings=0 ...",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -44,9 +45,13 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@cypress/react": "^5.12.4",
+    "@cypress/webpack-dev-server": "^1.8.4",
+    "@testing-library/cypress": "^8.0.2",
     "babel-jest": "^27.5.1",
     "cypress": "^9.5.4",
     "eslint": "^8.12.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.29.4",
     "jest": "^27.5.1",
     "react-test-renderer": "^18.0.0"
