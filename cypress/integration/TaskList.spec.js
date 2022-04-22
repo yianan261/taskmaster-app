@@ -12,7 +12,6 @@ describe("renders TaskList page ", () => {
   });
 
   it("allows tasks to be added, saved to complete chart when checked", () => {
-    /* ==== Generated with Cypress Studio ==== */
     cy.visit("http://localhost:3000/");
     cy.get(".task-input").clear();
     cy.get(".task-input").type("do another test");
@@ -22,7 +21,7 @@ describe("renders TaskList page ", () => {
 
   it("allows tasks to edited and updated", () => {
     cy.visit("/");
-    /* ==== Generated with Cypress Studio ==== */
+
     cy.get(".task-input").clear();
     cy.get(".task-input").type("do a test");
     cy.get(".task-button").click();
@@ -30,6 +29,5 @@ describe("renders TaskList page ", () => {
     cy.get(":nth-child(2) > div > .task-input").clear();
     cy.get(":nth-child(2) > div > .task-input").type("do more tests");
     cy.get("#editBtn").click();
-    /* ==== End Cypress Studio ==== */
   });
 });

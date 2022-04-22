@@ -13,10 +13,9 @@ describe("renders Tracker page ", () => {
 
   it("allows search by date and gets results", () => {
     cy.visit("/");
-    /* ==== Generated with Cypress Studio ==== */
+
     cy.get(":nth-child(2) > .nav-link").click({ force: true });
     cy.get("#example").click({ force: true });
     cy.get(".button > .btn").click({ force: true });
-    /* ==== End Cypress Studio ==== */
   });
 });
