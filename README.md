@@ -36,5 +36,8 @@ Project deployed on surge [here](https://oldfashioned-taskmaster.surge.sh/)
 
 Js Dos included in "doc" folder 
 
-# Tests with Jest
+# Tests with Jest and Cypress
+
+Unit tests with Jest and E2E with Cypress
+Tests in __test__ folder
 
