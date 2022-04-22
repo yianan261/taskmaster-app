@@ -39,5 +39,6 @@ Js Dos included in "doc" folder
 # Tests with Jest and Cypress
 
 Unit tests with Jest and E2E with Cypress
-Tests in __test__ folder
+Unit tests in __test__ folder
+Cypress tests in Cypress folder
 
