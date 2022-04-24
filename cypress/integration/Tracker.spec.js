@@ -1,10 +1,10 @@
 describe("renders Tracker page ", () => {
   it("renders correctly", () => {
-    cy.visit("/");
+    cy.visit("/Tracker");
   });
 
   it("allows search by keyword and gets results", () => {
-    cy.visit("/");
+    cy.visit("/Tracker");
     cy.get(":nth-child(2) > .nav-link").click({ force: true });
     cy.get(".input-group > .form-control").clear({ force: true });
     cy.get(".input-group > .form-control").type("test");
@@ -12,7 +12,7 @@ describe("renders Tracker page ", () => {
   });
 
   it("allows search by date and gets results", () => {
-    cy.visit("/");
+    cy.visit("/Tracker");
 
     cy.get(":nth-child(2) > .nav-link").click({ force: true });
     cy.get("#example").click({ force: true });
