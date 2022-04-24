@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import TaskList from "../components/TaskList";
 import Done from "../components/Done";
 import ProgressCheck from "../components/ProgressCheck";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+import TaskDoneManager from "../components/TaskDoneManager";
 
-const MainPage = ({ tdm }) => {
+const MainPage = () => {
+  const tdm = new TaskDoneManager();
   const [tasks, setTasks] = useState([]);
   const [checkDoneTasks, setCheckDoneTasks] = useState([]);
   const [percent, setPercent] = useState(0);
@@ -48,7 +50,7 @@ const MainPage = ({ tdm }) => {
     </div>
   );
 };
-MainPage.propTypes = {
-  tdm: PropTypes.object.isRequired,
-};
+// MainPage.propTypes = {
+//   tdm: PropTypes.object.isRequired,
+// };
 export default MainPage;

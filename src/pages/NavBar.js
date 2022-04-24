@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/Navbar.css";
-import MainPage from "./MainPage";
-import TaskDoneManager from "../components/TaskDoneManager";
-import Tracker from "./Tracker";
+// import MainPage from "./MainPage";
+// import TaskDoneManager from "../components/TaskDoneManager";
+// import Tracker from "./Tracker";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   //create instance of TaskDoneManager tdm object(db) and use it as prop for MainPage component
-  const tdm = new TaskDoneManager();
-  const [clickTrack, setClickTrack] = useState(false);
+  // const tdm = new TaskDoneManager();
+  // const [clickTrack, setClickTrack] = useState(false);
 
   return (
     <div>
@@ -28,30 +29,34 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <p
-                  className="nav-link"
-                  onClick={() => {
-                    setClickTrack(false);
-                  }}
-                >
-                  My Tasks
-                </p>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <p
+                    className="nav-link"
+                    // onClick={() => {
+                    //   setClickTrack(false);
+                    // }}
+                  >
+                    My Tasks
+                  </p>
+                </Link>
               </li>
               <li className="nav-item">
-                <p
-                  className="nav-link"
-                  onClick={() => {
-                    setClickTrack(true);
-                  }}
-                >
-                  Tracker
-                </p>
+                <Link to="/Tracker" style={{ textDecoration: "none" }}>
+                  <p
+                    className="nav-link"
+                    // onClick={() => {
+                    //   setClickTrack(true);
+                    // }}
+                  >
+                    Tracker
+                  </p>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      {clickTrack ? (
+      {/* {clickTrack ? (
         <div className="tracker-div">
           <Tracker />
         </div>
@@ -59,7 +64,7 @@ function NavBar() {
         <div className="mainpage">
           <MainPage tdm={tdm} />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

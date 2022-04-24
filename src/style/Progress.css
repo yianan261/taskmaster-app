@@ -4,7 +4,13 @@
     justify-content: start;
     /* width: 500px; */
     min-height: 400px;
-    background-image: linear-gradient( 90.1deg,  rgba(158,252,203,1) 16.8%, rgba(63,100,255,1) 105.2% );
+    background-color: #0093E9;
+    background-color: #FF9A8B;
+    background-color: #FF9A8B;
+background-image: linear-gradient(200deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+
+    
+
     text-align: center;
     margin: 128px auto;
     margin-left: 50px;

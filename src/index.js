@@ -3,16 +3,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-// import Tracker from "./pages/Tracker";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Tracker from "./pages/Tracker";
+// import NavBar from "./pages/NavBar";
+import MainPage from "./pages/MainPage";
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
-    {/* <Routes>
-      <Route path="/" />
+    <Routes>
+      <Route path="/" element={<MainPage />} />
       <Route path="/Tracker" element={<Tracker />} />
-    </Routes> */}
+    </Routes>
   </BrowserRouter>,
   document.getElementById("root")
 );
